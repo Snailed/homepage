@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,12 +19,12 @@ export default function Home() {
         <div className="py-12 flex align-bottom justify-between">
           <h1 className="text-2xl">Rasmus Løvstad</h1>
           <div className="mt-auto h-full">
-            <a className="mr-4" href="/">
+            <Link className="mr-4" href="/">
               CV
-            </a>
-            <a className="" href="/blog">
+            </Link>
+            <Link className="" href="/blog">
               Blog
-            </a>
+            </Link>
           </div>
         </div>
         <div>
