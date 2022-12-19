@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
+import { Roboto } from '@next/font/google';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
-
+const roboto = Roboto({ weight: ['400', '700'] });
 export default function Home() {
   return (
     <>
@@ -15,12 +13,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-lg mx-auto text-white visited:divide-purple-300 pb-12 p-4">
+      <main
+        className={`max-w-screen-lg mx-auto text-white visited:divide-purple-300 pb-12 p-4 ${roboto.className}`}
+      >
         <div className="py-12 flex align-bottom justify-between">
           <h1 className="text-2xl">Rasmus Løvstad</h1>
           <div className="mt-auto h-full">
             <Link className="mr-4" href="/">
               CV
+            </Link>
+            <Link className="mr-4" href="/portfolio">
+              Portfolio
             </Link>
             <Link className="" href="/blog">
               Blog
