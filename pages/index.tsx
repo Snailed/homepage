@@ -119,14 +119,14 @@ export default function Home() {
             </div>
             <div className="col-span-2">
               <p>
-                I am currently half a semester from finishing my bachelor's
+                I am currently half a semester from finishing my bachelor&apos;s
                 degree in Computer Science at the University of Copenhagen. I
                 have chosen the Data Science specialization, which has developed
                 my interest within data science, machine learning and algorithms
-                and data structures. My bachelor's thesis was on the algorithmic
-                problem of Similarity Searching within randomized algorithms,
-                where I had Mikkel Thorup as my supervisor, who is highly
-                regarded internationally within the field.
+                and data structures. My bachelor&apos;s thesis was on the
+                algorithmic problem of Similarity Searching within randomized
+                algorithms, where I had Mikkel Thorup as my supervisor, who is
+                highly regarded internationally within the field.
               </p>
               <p>
                 My studies have been prolonged by COVID-19 cancelling a study
@@ -137,7 +137,7 @@ export default function Home() {
               <ul className="mt-4 pl-4 list-disc">
                 <li>
                   <a href="https://github.com/Snailed/bachelor-project/blob/main/main.pdf">
-                    Link to bachelor's thesis
+                    Link to bachelor&apos;s thesis
                   </a>
                 </li>
                 <li>
