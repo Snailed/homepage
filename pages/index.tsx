@@ -15,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-screen-lg mx-auto text-white pb-12">
+      <main className="max-w-screen-lg mx-auto text-white visited:divide-purple-300 pb-12 p-4">
         <div className="py-12 flex align-bottom justify-between">
           <h1 className="text-2xl">Rasmus Løvstad</h1>
           <div className="mt-auto h-full">
@@ -28,12 +28,12 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <div className="grid gap-2 grid-cols-3">
+          <div className="grid gap-2 grid-cols-1 md:grid-cols-3">
             <div>
               <h1 className="text-4xl mb-8">Curriculum Vitae</h1>
               <h2 className="text-2xl mb-2">Contact Information</h2>
 
-              <table className="table-fixed">
+              <table className="table-fixed mb-4">
                 <tr>
                   <td className="pr-12 font-bold">Phone</td>{' '}
                   <td>
@@ -51,10 +51,18 @@ export default function Home() {
                 <tr>
                   <td className="font-bold">Socials</td>
                   <td className="">
-                    <a href="https://www.linkedin.com/in/rasmus-hag-l%C3%B8vstad/">
+                    <Link
+                      className="underline"
+                      href="https://www.linkedin.com/in/rasmus-hag-l%C3%B8vstad/"
+                    >
                       LinkedIn,{'   '}
-                    </a>
-                    <a href="https://github.com/Snailed/">Github</a>
+                    </Link>
+                    <Link
+                      className="underline"
+                      href="https://github.com/Snailed/"
+                    >
+                      Github
+                    </Link>
                   </td>
                 </tr>
               </table>
@@ -63,14 +71,14 @@ export default function Home() {
               <Image
                 src="/rasmus-2-new.jpg"
                 alt="Portrait"
-                className="rounded-full"
+                className="rounded-full my-4 mx-12"
                 width={300}
                 height={300}
               />
             </div>
           </div>
           <h2 className="text-2xl mb-6 mt-12">Work Experience</h2>
-          <div className="grid gap-6 grid-cols-3">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
             <div className="">
               <h3 className="font-bold text-lg">Kvalifik ApS</h3>
               <p>Full stack developer</p>
@@ -108,7 +116,7 @@ export default function Home() {
           </div>
 
           <h2 className="text-2xl mb-6 mt-12">Education</h2>
-          <div className="grid gap-2 gap-y-6 grid-cols-3">
+          <div className="grid gap-2 gap-y-6 grid-cols-1 md:grid-cols-3">
             <div className="">
               <h3 className="font-bold text-lg">
                 Bachelor of Computer Science
@@ -136,14 +144,20 @@ export default function Home() {
               </p>
               <ul className="mt-4 pl-4 list-disc">
                 <li>
-                  <a href="https://github.com/Snailed/bachelor-project/blob/main/main.pdf">
+                  <Link
+                    className="underline"
+                    href="https://github.com/Snailed/bachelor-project/blob/main/main.pdf"
+                  >
                     Link to bachelor&apos;s thesis
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://studier.ku.dk/bachelor/datalogi/">
+                  <Link
+                    className="underline"
+                    href="https://studier.ku.dk/bachelor/datalogi/"
+                  >
                     Link to study description
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -162,7 +176,7 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-2xl mb-6 mt-12">Related Qualifications</h2>
-          <div className="grid gap-6 grid-cols-3">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
             <div className="">
               <h3 className="font-bold text-lg">
                 Founding Board Member & Teacher
@@ -208,7 +222,7 @@ export default function Home() {
             </div>
           </div>
           <h2 className="text-2xl mb-6 mt-12">Awards</h2>
-          <div className="grid gap-6 grid-cols-3">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
             <div className="">
               <h3 className="font-bold text-lg">
                 Lundbeckfondens Formidlingspris
