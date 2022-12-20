@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Roboto } from '@next/font/google';
 import Link from 'next/link';
+import Header from '../components/Header';
 
 const roboto = Roboto({ weight: ['400', '700'] });
 export default function Home() {
@@ -16,20 +17,7 @@ export default function Home() {
       <main
         className={`max-w-screen-lg mx-auto text-white visited:divide-purple-300 pb-12 p-4 ${roboto.className}`}
       >
-        <div className="py-12 flex align-bottom justify-between">
-          <h1 className="text-2xl">Rasmus Løvstad</h1>
-          <div className="mt-auto h-full">
-            <Link className="mr-4" href="/">
-              CV
-            </Link>
-            <Link className="mr-4" href="/portfolio">
-              Portfolio
-            </Link>
-            <Link className="" href="/blog">
-              Blog
-            </Link>
-          </div>
-        </div>
+        <Header />
         <div>
           <div className="grid gap-2 grid-cols-1 md:grid-cols-3">
             <div>
@@ -149,6 +137,14 @@ export default function Home() {
                 <li>
                   <Link
                     className="underline"
+                    href="/record-of-transcripts-december-2022-neutralized.pdf"
+                  >
+                    Link to record of transcripts
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="underline"
                     href="https://github.com/Snailed/bachelor-project/blob/main/main.pdf"
                   >
                     Link to bachelor&apos;s thesis
@@ -231,7 +227,7 @@ export default function Home() {
                 Lundbeckfondens Formidlingspris
               </h3>
               <p>Unge Forskere</p>
-              <p className="">2022</p>
+              <p className="">2018</p>
             </div>
 
             <div className="col-span-2">
