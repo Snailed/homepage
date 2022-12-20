@@ -24,6 +24,54 @@ export default function Portfolio() {
         <Header />
         <div>
           <h1 className="text-4xl mb-8">Portfolio</h1>
+          <PortfolioCard
+            imgSrc="/studentlife-2.png"
+            alt="CBS Students Logo"
+            inverted={false}
+            title="Cross Platform Serverless App Development for Social Media"
+          >
+            <p className="mb-4">
+              Developed significant features across the entire stack, led sprint
+              plannings, review meeting and daily standups and performed several
+              maintenance updates. Read more{' '}
+              <Link
+                className="underline"
+                href="https://www.kvalifik.dk/cases/cbs-students"
+              >
+                here
+              </Link>
+              .
+            </p>
+            <h5 className="text-lg font-bold">Technologies</h5>
+            <ul className="list-disc pl-4">
+              <li>React Native (Expo) for mobile app</li>
+              <li>React for web platform</li>
+              <li>TypeScript</li>
+              <li>Firebase/Firestore</li>
+            </ul>
+          </PortfolioCard>
+          <PortfolioCard
+            imgSrc="/mikkeller-logo.jpg"
+            alt="Mikkeller Logo"
+            inverted={false}
+            title="Business Critical Backend Solutions"
+          >
+            <p className="mb-4">
+              Developed important backend features connecting ecommerce
+              platforms to warehouses, reporting tax information, structuring
+              data warehouse solutions and more. Was also responsible for cloud
+              infrastructure and DevOps setup.
+            </p>
+            <h5 className="text-lg font-bold">Technologies</h5>
+            <ul className="list-disc pl-4">
+              <li>Node.js (NestJS)</li>
+              <li>PostgreSQL</li>
+              <li>TypeScript</li>
+              <li>Google Cloud Platform</li>
+              <li>Terraform</li>
+              <li>Github Actions</li>
+            </ul>
+          </PortfolioCard>
         </div>
       </main>
     </>

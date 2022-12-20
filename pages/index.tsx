@@ -25,37 +25,39 @@ export default function Home() {
               <h2 className="text-2xl mb-2">Contact Information</h2>
 
               <table className="table-fixed mb-4">
-                <tr>
-                  <td className="pr-12 font-bold">Phone</td>{' '}
-                  <td>
-                    <a href="tel:+4529867238">+45 29 86 72 38</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-bold">Email</td>{' '}
-                  <td>
-                    <a href="mailto:rasmus.hag.lovstad@gmail.com">
-                      rasmus.hag.lovstad@gmail.com
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="font-bold">Socials</td>
-                  <td className="">
-                    <Link
-                      className="underline"
-                      href="https://www.linkedin.com/in/rasmus-hag-l%C3%B8vstad/"
-                    >
-                      LinkedIn,{'   '}
-                    </Link>
-                    <Link
-                      className="underline"
-                      href="https://github.com/Snailed/"
-                    >
-                      Github
-                    </Link>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td className="pr-12 font-bold">Phone</td>{' '}
+                    <td>
+                      <a href="tel:+4529867238">+45 29 86 72 38</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="font-bold">Email</td>{' '}
+                    <td>
+                      <a href="mailto:rasmus.hag.lovstad@gmail.com">
+                        rasmus.hag.lovstad@gmail.com
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="font-bold">Socials</td>
+                    <td className="">
+                      <Link
+                        className="underline"
+                        href="https://www.linkedin.com/in/rasmus-hag-l%C3%B8vstad/"
+                      >
+                        LinkedIn,{'   '}
+                      </Link>
+                      <Link
+                        className="underline"
+                        href="https://github.com/Snailed/"
+                      >
+                        Github
+                      </Link>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="col-span-2 flex justify-end">
