@@ -34,7 +34,6 @@ export default function Portfolio() {
             <div className="relative h-[200px] w-[200px] col-span-1">
               <Image
                 src={studentlifeLogo}
-                fill={true}
                 className="object-cover object-center"
                 alt="CBS Students Logo"
               />
