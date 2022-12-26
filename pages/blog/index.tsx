@@ -8,23 +8,29 @@ import Header from '../../components/Header';
 import { BlogFrontmatter } from '../../types/blog';
 import Image from 'next/image';
 export const getStaticProps = () => {
-  const files = fs.readdirSync('blog');
-  const posts: BlogPost[] = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`blog/${fileName}`, 'utf-8');
-    const { data: frontmatter } = matter(readFile) as unknown as {
-      data: BlogFrontmatter;
-    };
+  if (fs.existsSync('blog')) {
+    const files = fs.readdirSync('blog');
+    const posts: BlogPost[] = files.map((fileName) => {
+      const slug = fileName.replace('.md', '');
+      const readFile = fs.readFileSync(`blog/${fileName}`, 'utf-8');
+      const { data: frontmatter } = matter(readFile) as unknown as {
+        data: BlogFrontmatter;
+      };
+      return {
+        slug,
+        frontmatter,
+      };
+    });
     return {
-      slug,
-      frontmatter,
+      props: {
+        posts,
+      },
     };
-  });
-  return {
-    props: {
-      posts,
-    },
-  };
+  } else {
+    return {
+      props: { posts: [] },
+    };
+  }
 };
 
 type BlogPost = {
