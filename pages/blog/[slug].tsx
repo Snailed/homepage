@@ -7,6 +7,7 @@ import md from 'markdown-it'
 import { format } from 'date-fns';
 import Head from 'next/head';
 import { Roboto } from '@next/font/google';
+import Image from 'next/image';
 
 type BlogPostProps = {
   frontmatter: BlogFrontmatter,
@@ -14,6 +15,10 @@ type BlogPostProps = {
 }
 const roboto = Roboto({ weight: ['400', '700'] });
 export default function BlogPost({ frontmatter, content }: BlogPostProps) {
+  const formattedContent = md({
+    breaks: true,
+    typographer: true
+  }).render(content)
   return (
     <>      
     <Head>
@@ -30,12 +35,14 @@ export default function BlogPost({ frontmatter, content }: BlogPostProps) {
       >
     <div>
       <Header />
-    {frontmatter.imgSrc && <img src={frontmatter.imgSrc} />}
-      <h1 className="text-3xl">{frontmatter.title || 'Unknown title'}</h1>
-    { frontmatter.date && <h5 className="text-sm italic">
+        <article className="prose prose-invert mx-auto"  >
+
+    {frontmatter.imgSrc && frontmatter.imgAlt && (<Image width={800} height={800} src={frontmatter.imgSrc} alt={frontmatter.imgAlt} />)}
+      <h1 className="mb-2" >{frontmatter.title || 'Unknown title'}</h1>
+    { frontmatter.date && <h5 className="italic mb-8">
         {format(new Date(frontmatter.date), 'MMMM Mo, y')}
       </h5> }
-      <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+          <div dangerouslySetInnerHTML={{ __html: formattedContent }}  /></article>
     </div>
   </main>
 </>

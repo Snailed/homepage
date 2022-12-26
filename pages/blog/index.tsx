@@ -60,8 +60,8 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                 ? 1
                 : -1
             )
-            .map((x) => (
-              <Link href={`/blog/${x.slug}`}>
+            .map((x, i) => (
+              <Link key={i} href={`/blog/${x.slug}`}>
                 <h3 className="text-xl">
                   {x.frontmatter.title || 'Unknown title'}
                 </h3>
