@@ -1,6 +1,5 @@
 import fs from 'fs'
 import matter from 'gray-matter';
-import BlogLayout from '../../components/BlogLayout';
 import Header from '../../components/Header';
 import { BlogFrontmatter } from '../../types/blog';
 import md from 'markdown-it' 
