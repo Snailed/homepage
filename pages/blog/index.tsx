@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import { BlogFrontmatter } from '../../types/blog';
+import Image from 'next/image';
 export const getStaticProps = () => {
   const files = fs.readdirSync('blog');
   const posts: BlogPost[] = files.map((fileName) => {
@@ -39,7 +40,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>Portfolio | Rasmus Hag Løvstad</title>
+        <title>Latest Posts | Rasmus Hag Løvstad</title>
         <meta
           name="description"
           content="Portfolio for Rasmus Hag Løvstad, developer at Kvalifik ApS and student at UCPH Department of Computer Science"
@@ -51,7 +52,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
         className={`max-w-screen-lg mx-auto text-white visited:divide-purple-300 pb-12 p-4 ${roboto.className}`}
       >
         <Header />
-        <h1 className="text-3xl">Latest posts</h1>
+        <h1 className="text-3xl">Latest Posts</h1>
         <div>
           {posts
             .sort((a, b) =>
@@ -61,15 +62,25 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                 : -1
             )
             .map((x, i) => (
-              <Link key={i} href={`/blog/${x.slug}`}>
-                <h3 className="text-xl">
-                  {x.frontmatter.title || 'Unknown title'}
-                </h3>
-                {x.frontmatter.date && (
-                  <p className="italic">
-                    {format(new Date(x.frontmatter.date), 'MMMM Mo, y')}
-                  </p>
+              <Link key={i} href={`/blog/${x.slug}`} className="flex mt-8">
+                {x.frontmatter.imgSrc && x.frontmatter.imgAlt && (
+                  <Image
+                    src={x.frontmatter.imgSrc}
+                    alt={x.frontmatter.imgAlt}
+                    width={100}
+                    height={100}
+                  />
                 )}
+                <div className="ml-6">
+                  <h3 className="text-xl">
+                    {x.frontmatter.title || 'Unknown title'}
+                  </h3>
+                  {x.frontmatter.date && (
+                    <p className="italic">
+                      {format(new Date(x.frontmatter.date), 'MMMM Mo, y')}
+                    </p>
+                  )}
+                </div>
               </Link>
             ))}
         </div>

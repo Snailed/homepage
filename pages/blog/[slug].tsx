@@ -22,7 +22,7 @@ export default function BlogPost({ frontmatter, content }: BlogPostProps) {
   return (
     <>      
     <Head>
-        <title>Portfolio | Rasmus Hag Løvstad</title>
+        <title>{frontmatter.title} | Rasmus Hag Løvstad</title>
         <meta
           name="description"
           content="Portfolio for Rasmus Hag Løvstad, developer at Kvalifik ApS and student at UCPH Department of Computer Science"

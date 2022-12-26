@@ -27,9 +27,8 @@ export default function Portfolio() {
         <div>
           <h1 className="text-4xl mb-8">Portfolio</h1>
           <div
-            className={`grid grid-cols-4
-               flex-row
-               gap-12 mb-20`}
+            className={`grid md:grid-cols-4
+               md:gap-12 gap-4 mb-20`}
           >
             <div className="relative h-[200px] w-[200px] col-span-1">
               <Image
@@ -64,9 +63,9 @@ export default function Portfolio() {
             </div>
           </div>
           <div
-            className={`grid grid-cols-4
+            className={`grid md:grid-cols-4
                flex-row
-               gap-12 mb-20`}
+               md:gap-12 gap-4 mb-20`}
           >
             <div className="relative w-[200px] col-span-1">
               <Image
@@ -95,9 +94,9 @@ export default function Portfolio() {
             </div>
           </div>
           <div
-            className={`grid grid-cols-4
+            className={`grid md:grid-cols-4
                flex-row
-               gap-12 mb-20`}
+               md:gap-12 gap-4 mb-20`}
           >
             <div className="relative w-[200px] col-span-1">
               <Image
