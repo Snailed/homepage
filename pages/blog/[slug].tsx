@@ -55,6 +55,7 @@ type StaticPropParam = {
   }
 }
 export async function getStaticPaths() {
+  if (!fs.existsSync('blog') ) return {paths: [], fallback: false}
   const files = fs.readdirSync('blog')
   const paths: StaticPropParam[] = files.map((fileName) => ({
     params: {
