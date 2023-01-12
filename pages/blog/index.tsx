@@ -1,18 +1,18 @@
-import { Roboto } from '@next/font/google';
-import { format } from 'date-fns';
-import fs from 'fs';
-import matter from 'gray-matter';
-import Head from 'next/head';
-import Link from 'next/link';
-import Header from '../../components/Header';
-import { BlogFrontmatter } from '../../types/blog';
-import Image from 'next/image';
+import { Roboto } from "@next/font/google";
+import { format } from "date-fns";
+import fs from "fs";
+import matter from "gray-matter";
+import Head from "next/head";
+import Link from "next/link";
+import Header from "../../components/Header";
+import { BlogFrontmatter } from "../../types/blog";
+import Image from "next/image";
 export const getStaticProps = () => {
-  if (fs.existsSync('blog')) {
-    const files = fs.readdirSync('blog');
+  if (fs.existsSync("blog")) {
+    const files = fs.readdirSync("blog");
     const posts: BlogPost[] = files.map((fileName) => {
-      const slug = fileName.replace('.md', '');
-      const readFile = fs.readFileSync(`blog/${fileName}`, 'utf-8');
+      const slug = fileName.replace(".md", "");
+      const readFile = fs.readFileSync(`blog/${fileName}`, "utf-8");
       const { data: frontmatter } = matter(readFile) as unknown as {
         data: BlogFrontmatter;
       };
@@ -41,7 +41,7 @@ type BlogProps = {
   posts: BlogPost[];
 };
 
-const roboto = Roboto({ weight: ['400', '700'] });
+const roboto = Roboto({ weight: ["400", "700"] });
 const Blog: React.FC<BlogProps> = ({ posts }) => {
   return (
     <>
@@ -64,8 +64,8 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
             .sort((a, b) =>
               new Date(a.frontmatter.date || 0) >
               new Date(b.frontmatter.date || 0)
-                ? 1
-                : -1
+                ? -1
+                : 1
             )
             .map((x, i) => (
               <Link key={i} href={`/blog/${x.slug}`} className="flex mt-8">
@@ -79,11 +79,11 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                 )}
                 <div className="ml-6">
                   <h3 className="text-xl">
-                    {x.frontmatter.title || 'Unknown title'}
+                    {x.frontmatter.title || "Unknown title"}
                   </h3>
                   {x.frontmatter.date && (
                     <p className="italic">
-                      {format(new Date(x.frontmatter.date), 'MMMM Mo, y')}
+                      {format(new Date(x.frontmatter.date), "MMMM Do, y")}
                     </p>
                   )}
                 </div>
