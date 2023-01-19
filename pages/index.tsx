@@ -30,9 +30,9 @@ export default function Home() {
                 <TextLink href="https://kvalifik.dk">Kvalifik</TextLink>.
               </h2>
               <h2 className="text-lg">
-                Pursuing a bachelor's degree in Computer Science at{" "}
+                Pursuing a bachelor&apos;s degree in Computer Science at{" "}
                 <TextLink href="https://di.ku.dk/">DIKU</TextLink>, and will
-                soon start on the corresponding master's programme.
+                soon start on the corresponding master&apos;s programme.
               </h2>
               <h2 className="text-lg">
                 Occasionally share my thoughts and review music on my{" "}
