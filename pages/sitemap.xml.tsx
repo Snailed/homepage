@@ -1,11 +1,11 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { GetServerSideProps } from "next";
+import { BlogFrontmatter } from "../types/blog";
 
-function generateSiteMap(posts: string[]) {
+function generateSiteMap(posts: ({ fileName: string } & BlogFrontmatter)[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
      <url>
        <loc>https://www.rasmuslovstad.dk/</loc>
      </url>
@@ -19,16 +19,14 @@ function generateSiteMap(posts: string[]) {
        <loc>https://www.rasmuslovstad.dk/blog</loc>
      </url>
      ${posts
-       .map((fileName) => {
-         const readFile = fs.readFileSync(`blog/${fileName}`, "utf8");
-         const { data } = matter(readFile);
+       .map(({ fileName, date }) => {
          return `
        <url>
            <loc>${`https://www.rasmuslovstad.dk/blog/${fileName.replace(
              ".md",
              ""
            )}`}</loc>
-          <lastmod>${data.date}</lastmod>
+          <lastmod>${date}</lastmod>
        </url>
      `;
        })
@@ -43,9 +41,16 @@ function SiteMap() {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   // We make an API call to gather the URLs for our site
-  let posts: string[] = [];
+  let posts: ({ fileName: string } & BlogFrontmatter)[] = [];
   if (fs.existsSync("blog")) {
-    posts = fs.readdirSync("blog");
+    const fileNames = fs.readdirSync("blog");
+    posts = fileNames.map((fileName) => {
+      const readFile = fs.readFileSync(`blog/${fileName}`, "utf8");
+      return {
+        fileName,
+        ...matter(readFile).data,
+      };
+    });
   }
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(posts);
