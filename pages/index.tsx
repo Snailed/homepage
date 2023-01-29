@@ -16,16 +16,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`max-w-screen-2xl mx-auto text-white visited:divide-purple-300 ${roboto.className}`}
+        className={`lg:max-w-screen-2xl mx-auto text-white visited:divide-purple-300 ${roboto.className}`}
       >
         <div>
-          <div className="flex flex-row h-screen items-center gap-8">
-            <div className="min-w-fit">
-              <h5 className="text-[8rem] leading-[9rem]">Hello,</h5>
-              <h5 className="text-[8rem] leading-[9rem]">I am Rasmus.</h5>
-            </div>
+          <div className="flex flex-row items-end h-screen p-2 lg:p-16">
             <div>
-              <h2 className="text-lg">
+              <h5 className="text-4xl lg:text-[8rem] lg:leading-[9rem]">
+                Hello,
+              </h5>
+              <h5 className="text-4xl lg:text-[8rem] lg:leading-[9rem]">
+                I am Rasmus.
+              </h5>
+              <h2 className="text-lg mt-8">
                 Software developer for{" "}
                 <TextLink href="https://kvalifik.dk">Kvalifik</TextLink>.
               </h2>
@@ -40,7 +42,8 @@ export default function Home() {
               </h2>
               <h2 className="text-lg">
                 Contact information is available on my{" "}
-                <TextLink href="/cv">CV</TextLink>.
+                <TextLink href="/cv">CV</TextLink>. You can also check out my{" "}
+                <TextLink href="/portfolio">portfolio</TextLink>.
               </h2>
             </div>
           </div>
