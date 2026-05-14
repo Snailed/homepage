@@ -1,8 +1,8 @@
-- name: Home
+- name: 01 index
   link: /
-- name: About
+- name: 02 research
+  link: /research.html
+- name: 03 notes
+  link: /notes.html
+- name: 04 about
   link: /about.html
-- name: Blog
-  link: /blog.html
-- name: Staff
-  link: /staff.html

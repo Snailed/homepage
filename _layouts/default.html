@@ -5,13 +5,20 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% feed_meta %}
     {% seo %}
 </head>
 
 <body>
-    {% include navigation.html %}
-    {{ content }}
+    <div class="container">
+        <div class="layout">
+            {% include navigation.html %}
+            <main>
+                {{ content }}
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>

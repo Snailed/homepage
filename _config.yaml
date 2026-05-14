@@ -1,6 +1,5 @@
 collections:
-  authors:
-    output: true
+  research:
 
 defaults:
   - scope:

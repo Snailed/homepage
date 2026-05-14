@@ -1,7 +1,7 @@
 ---
-title: Blog
+title: Notes
 ---
-<h1>Latest Posts</h1>
+<h1>Notes</h1>
 
 <ul>
     {% for post in site.posts %}
@@ -11,3 +11,6 @@ title: Blog
     </li>
     {% endfor %}
 </ul>
+{% if site.posts == empty %}
+<p>Nothing here quite yet.</p>
+{% endif %}
