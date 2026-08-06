@@ -4,7 +4,7 @@ page: About
 
 # About me
 
-I am a future ELLIS PhD student in large-scale Bayesian Deep Learning at DTU Compute under supervisor Søren Hauberg.
+I am an ELLIS PhD student in large-scale Bayesian Deep Learning at DTU Compute under supervisor Søren Hauberg.
 
 My research interests are in probabilistic modelling, Bayesian statistics and machine learning.
 I plan on using a lot of randomized linear algebra and differential geometry as well.
